@@ -1,9 +1,7 @@
 import React, { FC } from "react";
-import Image from "next/image";
 import MenuItem from "./MenuItem";
 
-type Props = {};
-const Hero: FC<Props> = (props) => {
+const Hero: FC = () => {
   return (
     <>
       <section className="relative w-full bg-hero-pattern bg-cover bg-center bg-no-repeat ">

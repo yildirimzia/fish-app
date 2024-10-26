@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 
-type Props = {};
-const UberUns: FC<Props> = (props) => {
+const UberUns: FC = () => {
   return <div>UberUnss</div>;
 };
 

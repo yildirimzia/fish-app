@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 
-type Props = {};
-const Kontakt: FC<Props> = (props) => {
+const Kontakt: FC = () => {
   return <div>Kotakt</div>;
 };
 
