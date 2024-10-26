@@ -26,11 +26,13 @@ const Header: FC<Props> = ({ activeItem }) => {
   };
 
   return (
-    <div className="w-full relative z-50 bg-gradient-linear-one h-[80px]">
+    <div className="w-full relative z-50 dark:bg-gradient-linear-one">
       <div className="w-full relative">
         <div
-          className={`dark:bg-opacity-50 absolute top-0 left-0 z-[80] h-[80px] shadow-xl transition duration-500 w-full ${
-            active ? "bg-white" : "2"
+          className={`fixed top-0 left-0 w-full h-[80px] z-[80] shadow-xl transition duration-500 ${
+            active
+              ? "dark:bg-opacity-50   bg-white"
+              : "text-black z-[80] dark:shadow"
           }`}
         >
           <div className="w-[95%] 800px:w-[92%] m-auto py-2 h-full">
