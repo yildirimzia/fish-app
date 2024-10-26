@@ -4,7 +4,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import { Josefin_Sans } from "next/font/google";
 import { ThemeProvider } from "./utils/theme-provider";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 
 const poppins = Poppins({
@@ -22,11 +22,18 @@ const josefin = Josefin_Sans({
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const [activeItem, setActiveItem] = useState(0);
+  const [activeItem, setActiveItem] = useState<number>(0);
+
+  useEffect(() => {
+    const storedActiveItem = localStorage.getItem("activeItem");
+    if (storedActiveItem) {
+      setActiveItem(Number(storedActiveItem));
+    }
+  }, []);
 
   const handleItemClick = (index: number) => {
-    console.log("Clicked item index:", index);
     setActiveItem(index);
+    localStorage.setItem("activeItem", index.toString());
   };
 
   return (
