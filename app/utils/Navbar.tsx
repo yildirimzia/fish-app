@@ -3,24 +3,20 @@ import React from "react";
 
 export const navItemsData = [
   {
-    name: "Home",
+    name: "Startseite",
     url: "/",
   },
   {
-    name: "Courses",
-    url: "/courses",
+    name: "Hier finden Sie uns",
+    url: "/hier-finden-sie-uns/",
   },
   {
-    name: "About",
-    url: "/about",
+    name: "Über uns",
+    url: "/uber-uns",
   },
   {
-    name: "Policy",
-    url: "/policy",
-  },
-  {
-    name: "FAQ",
-    url: "/faq",
+    name: "Kontakt",
+    url: "/kontakt",
   },
 ];
 

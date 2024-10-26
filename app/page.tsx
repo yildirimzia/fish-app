@@ -1,5 +1,5 @@
 "use client";
-import Header from "@/app/components/Header";
+import HomePage from "@/app/(pages)/home/page";
 import { useState } from "react";
 import Heading from "@/app/utils/Heading";
 
@@ -13,7 +13,7 @@ export default function Home() {
         description="Brucker Hafen is a platform for learning and sharing knowledge"
         keywords="Brucker Hafen, elearning, courses, education"
       />
-      <Header activeItem={activeItem} />
+      <HomePage />
     </>
   );
 }

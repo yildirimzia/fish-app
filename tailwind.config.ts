@@ -14,7 +14,10 @@ const config: Config = {
         Josefin: ["var(--font-Josefin)"],
       },
       backgroundImage: {
+        "hero-pattern": "url('/images/bg.jpg')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-linear-one":
+          "linear-gradient(180deg, #000000C9 0%, #1D1D1D00 100%)",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "hero-gradient":

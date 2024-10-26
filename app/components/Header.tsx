@@ -1,41 +1,34 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { FC, useState } from "react";
 import Link from "next/link";
 import Navitems from "../utils/Navbar";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import ThemeSwitcher from "../utils/ThemeSwitcher";
-const Header = ({ activeItem }) => {
+
+interface Props {
+  activeItem: number;
+}
+
+const Header: FC<Props> = ({ activeItem }) => {
   const [active, setActive] = useState(false);
   const [openSidebar, setOpenSidebar] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 85) {
-        setActive(true);
-      } else {
-        setActive(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleClose = (e) => {
+  const handleClose = (e: any) => {
     if (e.target.id === "screen") {
       setOpenSidebar(false);
     }
   };
 
+  const handleThemeChange = () => {
+    setActive(!active);
+  };
+
   return (
-    <div className="w-full">
+    <div className="w-full relative z-50 bg-gradient-linear-one">
       <div className="w-full relative">
         <div
-          className={`${
-            active
-              ? "dark:bg-opacity-50 dark:bg-gradient-to-b dark:from-gray-900 dark:to-black fixed top-0 left-0 w-full h-[80px] z-[80] border-b dark:border-[#ffffff1c] shadow-xl transition duration-500"
-              : "w-full border-b dark:border-[#ffffff1c] h-[80px] z-[80] dark:shadow"
+          className={`absolute top-0 left-0 z-[80] h-[80px] shadow-xl transition duration-500 w-full ${
+            active ? "dark:bg-opacity-50" : "bg-white"
           }`}
         >
           <div className="w-[95%] 800px:w-[92%] m-auto py-2 h-full">
@@ -51,7 +44,7 @@ const Header = ({ activeItem }) => {
 
               <div className="flex items-center">
                 <Navitems activeItem={activeItem} isMobile={false} />
-                <ThemeSwitcher />
+                <ThemeSwitcher onThemeChange={handleThemeChange} />
                 <div className="sm:hidden flex">
                   <HiOutlineMenuAlt3
                     size={25}
