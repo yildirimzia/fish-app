@@ -23,9 +23,10 @@ export const navItemsData = [
 type Props = {
   activeItem: number;
   isMobile: boolean;
+  onClick: (index: number) => void; // onClick prop'u ekliyoruz
 };
 
-const Navitems: React.FC<Props> = ({ activeItem, isMobile }) => {
+const Navitems: React.FC<Props> = ({ activeItem, isMobile, onClick }) => {
   return (
     <>
       {/* For larger screens */}
@@ -39,6 +40,7 @@ const Navitems: React.FC<Props> = ({ activeItem, isMobile }) => {
                     ? "dark:text-[#37a39a] text-[crimson]"
                     : "dark:text-white text-black"
                 }  text-[18px] font-Poppins font-[400] px-6`}
+                onClick={() => onClick(index)}
               >
                 {item.name}
               </span>
@@ -66,6 +68,7 @@ const Navitems: React.FC<Props> = ({ activeItem, isMobile }) => {
                       ? "dark:text-[#37a39a] text-[crimson]"
                       : "dark:text-white text-black"
                   }  block py-5 text-[18px] font-Poppins font-[400] px-6`}
+                  onClick={() => onClick(index)}
                 >
                   {item.name}
                 </span>

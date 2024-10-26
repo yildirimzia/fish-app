@@ -7,17 +7,18 @@ import ThemeSwitcher from "../utils/ThemeSwitcher";
 
 interface Props {
   activeItem: number;
+  onClick: (index: number) => void;
 }
 
-const Header: FC<Props> = ({ activeItem }) => {
-  const [active, setActive] = useState(true);
+const Header: FC<Props> = ({ activeItem, onClick }) => {
+  const [active, setActive] = useState(false);
   const [openSidebar, setOpenSidebar] = useState(false);
 
-  console.log(active, "active");
+  console.log(activeItem, "activeItem");
 
   const handleClose = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget.id === "screen") {
-      setOpenSidebar(!active);
+      setOpenSidebar(false);
     }
   };
 
@@ -31,8 +32,8 @@ const Header: FC<Props> = ({ activeItem }) => {
         <div
           className={`fixed top-0 left-0 w-full h-[80px] z-[80] shadow-xl transition duration-500 ${
             active
-              ? "dark:bg-opacity-50   "
-              : "text-black z-[80] dark:shadow bg-white"
+              ? "dark:bg-opacity-50  bg-white "
+              : "text-black z-[80] dark:shadow"
           }`}
         >
           <div className="w-[95%] 800px:w-[92%] m-auto py-2 h-full">
@@ -47,7 +48,12 @@ const Header: FC<Props> = ({ activeItem }) => {
               </div>
 
               <div className="flex items-center">
-                <Navitems activeItem={activeItem} isMobile={false} />
+                <Navitems
+                  activeItem={activeItem}
+                  isMobile={true}
+                  onClick={onClick}
+                />{" "}
+                {/* Pass the handler here */}
                 <ThemeSwitcher onThemeChange={handleThemeChange} />
                 <div className="sm:hidden flex">
                   <HiOutlineMenuAlt3
@@ -67,8 +73,12 @@ const Header: FC<Props> = ({ activeItem }) => {
             id="screen"
           >
             <div className="w-[70%] fixed z-[999999] h-screen bg-white dark:bg-slate-900 dark:bg-opacity-90 top-0 right-0">
-              <Navitems activeItem={activeItem} isMobile={true} />
-
+              <Navitems
+                onClick={onClick}
+                activeItem={activeItem}
+                isMobile={true}
+              />{" "}
+              {/* Pass the handler here */}
               <br />
               <br />
               <p className="text-[16px] px-2 text-black">

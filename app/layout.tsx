@@ -22,14 +22,20 @@ const josefin = Josefin_Sans({
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const [activeItem] = useState(0);
+  const [activeItem, setActiveItem] = useState(0);
+
+  const handleItemClick = (index: number) => {
+    console.log("Clicked item index:", index);
+    setActiveItem(index);
+  };
+
   return (
     <html lang="en">
       <body
         className={`${poppins.variable} ${josefin.variable} !bg-white bg-no-repeat bg-gradient-to-b dark:from-gray-900 dark:to-black duration-300`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Header activeItem={activeItem} />
+          <Header activeItem={activeItem} onClick={handleItemClick} />
           {children}
         </ThemeProvider>
       </body>
