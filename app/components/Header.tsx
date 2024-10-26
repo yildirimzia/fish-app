@@ -13,9 +13,11 @@ const Header: FC<Props> = ({ activeItem }) => {
   const [active, setActive] = useState(false);
   const [openSidebar, setOpenSidebar] = useState(false);
 
+  console.log(active, "active");
+
   const handleClose = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget.id === "screen") {
-      setOpenSidebar(false);
+      setOpenSidebar(!active);
     }
   };
 
@@ -24,11 +26,11 @@ const Header: FC<Props> = ({ activeItem }) => {
   };
 
   return (
-    <div className="w-full relative z-50 bg-gradient-linear-one">
+    <div className="w-full relative z-50 bg-gradient-linear-one h-[80px]">
       <div className="w-full relative">
         <div
-          className={`absolute top-0 left-0 z-[80] h-[80px] shadow-xl transition duration-500 w-full ${
-            active ? "dark:bg-opacity-50" : "bg-white"
+          className={`dark:bg-opacity-50 absolute top-0 left-0 z-[80] h-[80px] shadow-xl transition duration-500 w-full ${
+            active ? "bg-white" : "2"
           }`}
         >
           <div className="w-[95%] 800px:w-[92%] m-auto py-2 h-full">

@@ -3,12 +3,14 @@ import { useTheme } from "next-themes";
 import { BiMoon, BiSun } from "react-icons/bi";
 
 interface ThemeSwitcherProps {
-  onThemeChange: () => void; // Tema değişikliği için bir prop ekledik
+  onThemeChange: () => void;
 }
 
 const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ onThemeChange }) => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  console.log(theme, "theme");
 
   useEffect(() => setMounted(true), []);
 
@@ -16,7 +18,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ onThemeChange }) => {
 
   const handleThemeChange = (newTheme: string) => {
     setTheme(newTheme);
-    onThemeChange(); // Tema değiştiğinde prop'u çağırıyoruz
+    onThemeChange();
   };
 
   return (
@@ -26,14 +28,14 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ onThemeChange }) => {
           className="cursor-pointer"
           fill="black"
           size={25}
-          onClick={() => handleThemeChange("dark")} // Tema değişikliğini buradan yönetiyoruz
+          onClick={() => handleThemeChange("dark")}
         />
       ) : (
         <BiSun
           className="cursor-pointer"
           fill="white"
           size={25}
-          onClick={() => handleThemeChange("light")} // Tema değişikliğini buradan yönetiyoruz
+          onClick={() => handleThemeChange("light")}
         />
       )}
     </div>

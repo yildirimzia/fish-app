@@ -52,7 +52,7 @@ const Navitems: React.FC<Props> = ({ activeItem, isMobile }) => {
           <div className="w-full text-center py-6">
             <Link
               href={"/"}
-              className={`text-[25px] font-Poppins font-[500] text-black dark:text-white`}
+              className={`text-[25px] font-Poppins font-[500] text-white dark:text-black`}
             >
               BRUCKER HAFEN
             </Link>

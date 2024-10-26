@@ -13,7 +13,6 @@ const MenuItem: React.FC<MenuItemProps> = ({
   price,
   imageUrl,
 }) => {
-  console.log("MenuItemProps", imageUrl);
   return (
     <div className="text-center">
       <Image
