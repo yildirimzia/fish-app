@@ -13,8 +13,8 @@ const Header: FC<Props> = ({ activeItem }) => {
   const [active, setActive] = useState(false);
   const [openSidebar, setOpenSidebar] = useState(false);
 
-  const handleClose = (e: any) => {
-    if (e.target.id === "screen") {
+  const handleClose = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.currentTarget.id === "screen") {
       setOpenSidebar(false);
     }
   };
