@@ -41,25 +41,27 @@ const Navitems: React.FC<Props> = ({ activeItem, isMobile, onClick }) => {
           <div className="w-full text-center py-6">
             <Link
               href={"/"}
-              className="text-[25px] font-Poppins font-[500] text-white dark:text-black"
+              className="text-[25px] font-Poppins font-[500] text-black dark:text-white"
             >
               BRUCKER HAFEN
             </Link>
           </div>
-          {navItemsData.map((item, index) => (
-            <Link href={item.url} key={index} passHref>
-              <span
-                className={`${
-                  activeItem === index
-                    ? "dark:text-[#37a39a] text-[crimson]"
-                    : "dark:text-white text-black"
-                } text-[18px] font-Poppins font-[400] px-6`}
-                onClick={() => onClick(index)}
-              >
-                {item.name}
-              </span>
-            </Link>
-          ))}
+          <div className="flex flex-col items-center gap-[50px] mb-[50px] justify-center">
+            {navItemsData.map((item, index) => (
+              <Link href={item.url} key={index} passHref>
+                <span
+                  className={`${
+                    activeItem === index
+                      ? "dark:text-[#37a39a] text-[crimson]"
+                      : "dark:text-white text-black"
+                  } text-[18px] font-Poppins font-[400] px-6`}
+                  onClick={() => onClick(index)}
+                >
+                  {item.name}
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       )}
     </>

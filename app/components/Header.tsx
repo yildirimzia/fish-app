@@ -14,8 +14,6 @@ const Header: FC<Props> = ({ activeItem, onClick }) => {
   const [active, setActive] = useState(false);
   const [openSidebar, setOpenSidebar] = useState(false);
 
-  console.log(activeItem, "active");
-
   const handleClose = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget.id === "screen") {
       setOpenSidebar(false);
@@ -36,8 +34,8 @@ const Header: FC<Props> = ({ activeItem, onClick }) => {
         <div
           className={`fixed top-0 left-0 w-full h-[80px] z-[80] shadow-xl transition duration-500 ${
             active
-              ? "dark:bg-opacity-50 1 "
-              : "text-black z-[80]  dark:shadow 2 bg-white "
+              ? " text-black z-[80] dark:shadow bg-white 2"
+              : "dark:bg-opacity-50 1"
           }`}
         >
           <div className="w-[95%] 800px:w-[92%] m-auto py-2 h-full">
@@ -54,10 +52,9 @@ const Header: FC<Props> = ({ activeItem, onClick }) => {
               <div className="flex items-center">
                 <Navitems
                   activeItem={activeItem}
-                  isMobile={true}
+                  isMobile={false}
                   onClick={onClick}
-                />{" "}
-                {/* Pass the handler here */}
+                />
                 <ThemeSwitcher onThemeChange={handleThemeChange} />
                 <div className="sm:hidden flex">
                   <HiOutlineMenuAlt3
@@ -72,21 +69,21 @@ const Header: FC<Props> = ({ activeItem, onClick }) => {
         </div>
         {openSidebar && (
           <div
-            className="fixed w-full h-screen top-0 left-0 z-[999999] dark:bg-[unset] bg-[#00000024]"
+            className="fixed w-full h-screen top-0 left-0 z-[999999] bg-[#00000024] dark:bg-opacity-50"
             onClick={handleClose}
             id="screen"
           >
-            <div className="w-[70%] fixed z-[999999] h-screen bg-white dark:bg-slate-900 dark:bg-opacity-90 top-0 right-0">
+            <div className="w-[70%] fixed z-[999999] h-screen bg-white dark:bg-slate-900 top-0 right-0 p-4">
               <Navitems
-                onClick={onClick}
+                onClick={(index) => {
+                  onClick(index);
+                  setOpenSidebar(false);
+                }}
                 activeItem={activeItem}
                 isMobile={true}
-              />{" "}
-              {/* Pass the handler here */}
-              <br />
-              <br />
-              <p className="text-[16px] px-2 text-black">
-                Copy Right 2024 Test
+              />
+              <p className="text-[16px] text-center px-2 text-black dark:text-white">
+                Copyright 2024
               </p>
             </div>
           </div>

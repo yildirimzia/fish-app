@@ -6,6 +6,7 @@ import { Josefin_Sans } from "next/font/google";
 import { ThemeProvider } from "./utils/theme-provider";
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header activeItem={activeItem} onClick={handleItemClick} />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
