@@ -53,7 +53,7 @@ const Navitems: React.FC<Props> = ({ activeItem, isMobile, onClick }) => {
                   className={`${
                     activeItem === index
                       ? "dark:text-[#37a39a] text-[crimson]"
-                      : "dark:text-white text-black"
+                      : "dark:text-black text-white"
                   } text-[18px] font-Poppins font-[400] px-6`}
                   onClick={() => onClick(index)}
                 >

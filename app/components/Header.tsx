@@ -14,6 +14,8 @@ const Header: FC<Props> = ({ activeItem, onClick }) => {
   const [active, setActive] = useState(false);
   const [openSidebar, setOpenSidebar] = useState(false);
 
+  console.log("first", active);
+
   const handleClose = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget.id === "screen") {
       setOpenSidebar(false);
@@ -32,11 +34,7 @@ const Header: FC<Props> = ({ activeItem, onClick }) => {
     >
       <div className="w-full relative">
         <div
-          className={`fixed top-0 left-0 w-full h-[80px] z-[80] shadow-xl transition duration-500 ${
-            active
-              ? "dark:bg-opacity-50"
-              : "text-black z-[80] dark:shadow bg-white"
-          }`}
+          className={`fixed bg-white text-black dark:text-white dark:bg-opacity-0 top-0 left-0 w-full h-[80px] z-[80] shadow-xl transition duration-500 `}
         >
           <div className="w-[95%] 800px:w-[92%] m-auto py-2 h-full">
             <div className="w-full flex items-center justify-between p-3">

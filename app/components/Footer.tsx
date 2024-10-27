@@ -2,10 +2,10 @@ import React, { FC } from "react";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-white">
+    <footer className="bg-white dark:bg-black">
       <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-5xl">
+          <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
             Customise Your Product
           </h2>
 
@@ -16,7 +16,7 @@ const Footer: FC = () => {
 
           <a
             href="#"
-            className="mt-8 inline-block rounded-full border border-indigo-600 px-12 py-3 text-sm font-medium text-indigo-600 hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring active:bg-indigo-500"
+            className="mt-8 inline-block rounded-full border border-indigo-600 px-12 py-3 text-sm font-medium text-indigo-600 hover:bg-indigo-600 hover:text-white focus:outline-none dark:text-white focus:ring active:bg-indigo-500"
           >
             Get Started
           </a>

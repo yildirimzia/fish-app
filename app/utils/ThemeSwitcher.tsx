@@ -17,6 +17,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ onThemeChange }) => {
   if (!mounted) return null;
 
   const handleThemeChange = (newTheme: string) => {
+    console.log(newTheme, "newTheme");
     setTheme(newTheme);
     onThemeChange();
   };
