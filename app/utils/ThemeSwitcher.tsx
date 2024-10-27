@@ -34,7 +34,6 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ onThemeChange }) => {
       ) : (
         <BiSun
           className="cursor-pointer"
-          fill="white"
           size={25}
           onClick={() => handleThemeChange("light")}
         />
