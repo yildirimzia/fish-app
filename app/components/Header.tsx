@@ -34,8 +34,8 @@ const Header: FC<Props> = ({ activeItem, onClick }) => {
         <div
           className={`fixed top-0 left-0 w-full h-[80px] z-[80] shadow-xl transition duration-500 ${
             active
-              ? " text-black z-[80] dark:shadow bg-white 2"
-              : "dark:bg-opacity-50 1"
+              ? "dark:bg-opacity-50"
+              : "text-black z-[80] dark:shadow bg-white"
           }`}
         >
           <div className="w-[95%] 800px:w-[92%] m-auto py-2 h-full">
