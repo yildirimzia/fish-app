@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-white dark:bg-black">
+    <footer className=" dark:from-gray-900 dark:to-black">
       <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8 lg:pt-24">
         <div className="text-center">
           <h2 className="text-3xl font-Poppins font-extrabold text-gray-900 dark:text-white sm:text-5xl">
